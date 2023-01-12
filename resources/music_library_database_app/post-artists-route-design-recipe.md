@@ -1,14 +1,14 @@
-# GET /artists Route Design Recipe
-
-_Copy this design recipe template to test-drive a Sinatra route._
+# POST /artists Route Design Recipe
 
 ## 1. Design the Route Signature
 
 You'll need to include:
-  * the HTTP method: GET
+  * the HTTP method: POST
   * the path: /artists
   * any query parameters (passed in the URL): none
-  * or body parameters (passed in the request body): none
+  * or body parameters (passed in the request body): 
+        name=Wild nothing
+        genre=Indie
 
 
 
@@ -25,11 +25,10 @@ _Replace the below with your own design. Think of all the different possible res
 ```
 
 # Request:
-GET /artists
+POST /artists
 
 # Expected response (200 OK)
-Pixies, ABBA, Taylor Swift, Nina Simone
-
+No content
 
 ```
 
@@ -40,21 +39,22 @@ _Replace these with your own design._
 ```
 # Request:
 
-GET /posts?id=1
+POST /artists
 
 # Expected response:
 
-Response for 200 OK
+Response for 200 OK ('')
 ```
 
 ```
 # Request:
 
-GET /posts?id=276278
+GET /artists
 
 # Expected response:
 
-Response for 404 Not Found
+Response for 200 OK: Pixies, ABBA, Taylor Swift, Nina Simone, Wild nothing
+
 ```
 
 ## 4. Encode as Tests Examples

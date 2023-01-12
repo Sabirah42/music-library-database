@@ -35,13 +35,13 @@ describe ArtistRepository do
     repo = ArtistRepository.new
 
     artist = Artist.new
-    artist.name = 'Kiasmos'
-    artist.genre = 'Experimental'
+    artist.name = 'Wild nothing'
+    artist.genre = 'Indie'
     repo.create(artist)
 
     artists = repo.all
 
     expect(artists.length).to eq(5)
-    expect(artists.last.name).to eq('Kiasmos')
+    expect(artists.last.name).to eq('Wild nothing')
   end
 end

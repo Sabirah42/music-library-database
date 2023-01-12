@@ -38,7 +38,7 @@ describe Application do
     it 'should return a list of all artists' do
       response = get('artists')
 
-      expected_response = 'Pixies, ABBA, Taylor Swift, Nina Simone'
+      expected_response = 'Pixies, ABBA, Taylor Swift, Nina Simone, Wild nothing'
 
       expect(response.status).to eq(200)
       expect(response.body).to eq(expected_response)
@@ -46,6 +46,16 @@ describe Application do
     end
   end
 
+  context "POST /artists" do
+    it 'should create a new album' do
+      response = post('/artists', name: 'Wild nothing', genre: 'Indie', id: '5')
 
+      expect(response.status).to eq(200)
+      expect(response.body).to eq('')
+
+      response = get('/artists')
+      expect(response.body).to include('Wild nothing')
+    end
+  end
 
 end
